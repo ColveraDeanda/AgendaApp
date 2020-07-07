@@ -73,7 +73,7 @@ var TaskController = {
 
     /**
      * @param {object} res sending object as response.
-     * @returns Tasks Objects in array or it's respective error.
+     * @returns Task Objects in array or it's respective error.
      */
     getTasks: function (err, res) {
         Task.find((err, data) => {
@@ -122,6 +122,11 @@ var TaskController = {
         });
     },
 
+    /**
+     * @param {Object} req req id and body by user.
+     * @param {Object} res sending object as response.
+     * @returns Task object updated or it's respective error.
+     */
     updateTask: function (req, res) {
         let id = req.params.id;
         let body = req.body;
@@ -182,8 +187,9 @@ var TaskController = {
     },
 
     /**
-     * @param {*} req request day and month by user.
-     * @param {*} res Objects tasks filtered by day and momth.
+     * @param {Object} req request day and month by user.
+     * @param {Object} res res sending object as response.
+     * @returns Task objects filtered by day and month or it's respective error.
      */
     // Detalle de cada día del mes
     getByDayAndMonth: function (req, res) {
@@ -203,8 +209,9 @@ var TaskController = {
     },
 
     /**
-     * @param {*} req request month by user.
-     * @param {*} res Quantity of each category by month or it's respetive error.
+     * @param {Object} req request month by user.
+     * @param {Object} res res sending object as response.
+     * @returns Quantity of each category filtered by month.
      */
     getCategoriesByMonth: function (req, res) {
         let month = req.params.month;
