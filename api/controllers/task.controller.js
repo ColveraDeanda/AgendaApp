@@ -1,4 +1,5 @@
 var Task = require('../models/task.model');
+var ObjectId = require('mongodb').ObjectID;
 
 var TaskController = {
 
@@ -76,12 +77,12 @@ var TaskController = {
      */
     getTasks: function (err, res) {
         Task.find((err, data) => {
-            if (err) return res.status(500).send({ message: 'A ocurrido un error.'});
-            if (!data) return res.status(404).send({ message: 'No hay registros a mostrar'});
-            if(data.length == 0) {
+            if (err) return res.status(500).send({ message: 'A ocurrido un error.' });
+            if (!data) return res.status(404).send({ message: 'No hay registros a mostrar' });
+            if (data.length == 0) {
                 return res.status(200).send({
                     message: 'No se han registrado tareas'
-                });    
+                });
             }
             return res.status(200).send({
                 task: data
@@ -97,8 +98,8 @@ var TaskController = {
     getTask: function (req, res) {
         let id = req.params.id;
         Task.findById(id, (err, data) => {
-            if (err) return res.status(500).send({ message: 'Error al guardar' });
-            if (!data) return res.status(404).send({ message: 'La tarea no existe' });
+            if (err) return res.status(500).send({ message: 'Error al devolver el registro' });
+            if (!data) return res.status(404).send({ message: 'El registro no existe' });
             return res.status(200).send({
                 task: data
             });
@@ -113,8 +114,8 @@ var TaskController = {
     deleteTask: function (req, res) {
         let id = req.params.id;
         Task.findByIdAndDelete(id, (err, data) => {
-            if (err) return res.status(500).send({ message: 'Error al guardar' });
-            if (!data) return res.status(404).send({ message: 'Error al guardar' });
+            if (err) return res.status(500).send({ message: 'Error al eliminar' });
+            if (!data) return res.status(404).send({ message: 'No existe un dato a eliminar' });
             return res.status(200).send({
                 message: 'Tarea elimada'
             });
@@ -122,7 +123,112 @@ var TaskController = {
     },
 
     updateTask: function (req, res) {
+        let id = req.params.id;
+        let body = req.body;
+        let error = false;
+        let valid = [];
 
+        if (body.title == null || !isNaN(body.title)) {
+            valid.push('El título es incorrecto');
+        }
+        if (body.description == null || !isNaN(body.description)) {
+            valid.push('La descripción es incorrecta');
+        }
+        if (body.category == null || !isNaN(body.category)) {
+            valid.push('La categoría es incorrecta');
+        }
+        if (body.day == null || isNaN(body.day) || body.day.length == 0) {
+            valid.push('El día es incorrecto');
+        }
+        if (body.month == null || !isNaN(body.month)) {
+            valid.push('El mes es incorrecto');
+        }
+
+        // Setting Data
+        body.title = body.title.toLowerCase();
+        body.description = body.description.toLowerCase();
+        body.category = body.category.toLowerCase();
+        body.month = body.month.toLowerCase();
+
+        body.title = body.title.slice(0, 1).toUpperCase() + body.title.slice(1);
+        body.description = body.description.slice(0, 1).toUpperCase() + body.description.slice(1);
+        body.category = body.category.slice(0, 1).toUpperCase() + body.category.slice(1);
+        body.month = body.month.slice(0, 1).toUpperCase() + body.month.slice(1);
+
+        if (valid.length == 0) {
+            Task.find({ day: body.day, month: body.month, $nor: [{ _id: ObjectId(id) }] }).exec((err, data) => {
+                data.map((x) => {
+                    if (x.title === body.title) return error = true;
+                });
+                if (error === false) {
+                    Task.findByIdAndUpdate(id, body, { new: true }, (err, data) => {
+                        if (err) return res.status(500).send({ message: 'Error al actualizar' });
+                        if (!data) return res.status(404).send({ message: 'No existe un dato a actualizar' });
+                        return res.status(200).send({
+                            task: data
+                        });
+                    });
+                } else {
+                    return res.status(200).send({
+                        message: 'La tarea ya existe'
+                    });
+                }
+            });
+        } else {
+            return res.status(200).send({
+                errors: valid
+            });
+        }
+    },
+
+    /**
+     * @param {*} req request day and month by user.
+     * @param {*} res Objects tasks filtered by day and momth.
+     */
+    // Detalle de cada día del mes
+    getByDayAndMonth: function (req, res) {
+        let day = req.params.day;
+        let month = req.params.month;
+        Task.find({ day: day, month: month }).exec((err, data) => {
+            if (err) return res.status(500).send({ message: 'A ocurrido un error.' });
+            if (!data) return res.status(404).send({ message: 'Error al obtener los datos.' });
+            if (data.length == 0) {
+                res.status(200).send({ message: "No se han guardado registros." });
+            } else {
+                res.status(200).send({
+                    tasks: data
+                });
+            }
+        });
+    },
+
+    /**
+     * @param {*} req request month by user.
+     * @param {*} res Quantity of each category by month or it's respetive error.
+     */
+    getCategoriesByMonth: function (req, res) {
+        let month = req.params.month;
+        let notes = 0;
+        let birthday = 0;
+        let tasks = 0;
+        let projects = 0;
+        Task.find({ month: month }).exec((err, data) => {
+            if (err) return res.status(500).send({ message: 'A ocurrido un error.' });
+            if (!data) return res.status(404).send({ message: 'Error al obtener los datos.' });
+            if (data.length == 0) {
+                return res.status(200).send({ message: "No existen registros en este mes." });
+            }
+            notes = data.filter((x) => x.category === "Nota").length;
+            birthday = data.filter((x) => x.category === "Cumpleaños").length;
+            tasks = data.filter((x) => x.category === "Tarea").length;
+            projects = data.filter((x) => x.category === "Proyecto").length;
+            return res.status(200).send({
+                notes: notes,
+                birthday: birthday,
+                tasks: tasks,
+                projects: projects
+            });
+        });
     }
 
 }
