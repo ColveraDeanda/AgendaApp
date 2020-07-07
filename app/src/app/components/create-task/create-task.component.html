@@ -1,1 +1,61 @@
-<p>create-task works!</p>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-5">
+            <!-- Error Alert -->
+            <div *ngIf="repetead == true" class="alert alert-danger" role="alert">
+                La tarea <strong>{{temp}}</strong> del mes {{task.month}} y día {{task.day}} ya existe.
+            </div>
+            <!-- Success Alert -->
+            <div *ngIf="repetead == false" class="alert alert-success" role="alert">
+                Tarea guardada correctamente.
+            </div>
+            <div class="card">
+                <div class="card-header text-center">
+                    <h4><strong>{{task.month}} {{task.day}}</strong></h4>
+                </div>
+                <div class="card-body">
+                    <form #taskForm="ngForm" (ngSubmit)="saveTask(taskForm)">
+                        <!-- Title -->
+                        <div class="form-group has-danger has-success">
+                            <label for="title"> <strong>Título</strong></label>
+                            <input type="text" name="title" id="title" #title="ngModel" [(ngModel)]="task.title"
+                                autocomplete="off" class="form-control" [ngClass]="{
+                                'is-invalid': title.touched && !title.valid,
+                                'is-valid': title.touched && title.valid}" required>
+                            <div *ngIf="title.touched && !title.valid">
+                                <span [ngStyle]="{'color': 'red'}">El título es incorrecto</span>
+                            </div>
+                        </div>
+                        <!-- Description -->
+                        <div class="form-group has-danger has-success">
+                            <label for="description"> <strong>Descripción</strong></label>
+                            <textarea name="description" id="description" rows="3" #description="ngModel"
+                                [(ngModel)]="task.description" autocomplete="off" class="form-control" 
+                                [ngClass]="{'is-invalid': description.touched && !description.valid,
+                                            'is-valid': description.touched && description.valid}" required></textarea>
+                            <div *ngIf="description.touched && !description.valid">
+                                <span [ngStyle]="{'color': 'red'}">La descripción no es válida.</span>
+                            </div>
+                        </div>
+                        <!-- Category -->
+                        <div class="form-group has-danger has-success">
+                            <label for="category"> <strong>Categoría</strong></label>
+                            <select class="form-control" [ngClass]="{
+                                    'is-invalid': category.touched && !category.valid,
+                                    'is-valid': category.touched && category.valid}" id="category" name="category"
+                                #category="ngModel" [(ngModel)]="task.category" required>
+                                <option *ngFor="let category of categories" [value]="category.name">
+                                    {{category.name}}
+                                </option>
+                            </select>
+                            <div *ngIf="category.touched && !category.valid">
+                                <span [ngStyle]="{'color': 'red'}">La categoría no es válida.</span>
+                            </div>
+                        </div>
+                        <input type="submit" value="Guardar" class="btn btn-primary" [disabled]="!taskForm.form.valid">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
