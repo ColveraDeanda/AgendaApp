@@ -15,8 +15,9 @@ export class CreateTaskComponent implements OnInit {
   day: number;
   month: string;
   categories: Array<Object> = [];
-  repetead: boolean;
-  temp: string;
+  errors: Array<String> = [];
+  error_msj: string = "";
+  success_msj: string = "";
   
   constructor(private taskService: TaskService,
               private _route: ActivatedRoute) {
@@ -37,13 +38,23 @@ export class CreateTaskComponent implements OnInit {
   }
 
   saveTask(form) {
-    this.temp = this.task.title;
+    this.errors = [];
     this.taskService.saveTask(this.task).subscribe((res) => {
-      if(res.message) {
-        this.repetead = true;
+      console.log(res);
+      this.success_msj = 'Saved';
+    }, err => {
+      console.log(err);
+      this.success_msj = 'Not saved';
+      if(err.error.errors) {
+        this.errors.push(err.error.errors);
+        this.error_msj = this.errors.join()
+        this.error_msj = this.error_msj.slice(0,2).toUpperCase() + this.error_msj.slice(2) + ".";
+        console.log(this.error_msj);
       } else {
-        this.repetead = false;
-        console.log(res);
+        this.errors.push(err.error.repeated);
+        this.error_msj = this.errors.join()
+        this.error_msj = this.error_msj.slice(0, 1).toUpperCase() + this.error_msj.slice(1) + ".";
+        console.log(this.error_msj);
       }
     });
     form.reset();

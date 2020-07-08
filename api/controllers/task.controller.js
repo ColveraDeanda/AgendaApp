@@ -19,19 +19,19 @@ var TaskController = {
         task.month = req.body.month;
 
         if (task.title == null || !isNaN(task.title)) {
-            valid.push('El título es incorrecto');
+            valid.push(' el título es incorrecto');
         }
         if (task.description == null || !isNaN(task.description)) {
-            valid.push('La descripción es incorrecta');
+            valid.push(' la descripción es incorrecta');
         }
         if (task.category == null || !isNaN(task.category)) {
-            valid.push('La categoría es incorrecta');
+            valid.push(' la categoría es incorrecta');
         }
         if (task.day == null || isNaN(task.day)) {
-            valid.push('El día es incorrecto');
+            valid.push(' el día es incorrecto');
         }
         if (task.month == null || !isNaN(task.month)) {
-            valid.push('El mes es incorrecto');
+            valid.push(' el mes es incorrecto');
         }
 
         // Setting Data
@@ -59,13 +59,13 @@ var TaskController = {
                         });
                     });
                 } else {
-                    return res.status(200).send({
-                        message: 'La tarea ya existe'
+                    return res.status(500).send({
+                        repeated: 'La tarea ya existe'
                     });
                 }
             });
         } else {
-            return res.status(200).send({
+            return res.status(500).send({
                 errors: valid
             });
         }

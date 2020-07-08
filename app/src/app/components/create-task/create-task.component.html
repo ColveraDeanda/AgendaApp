@@ -2,11 +2,11 @@
     <div class="row">
         <div class="col-md-5">
             <!-- Error Alert -->
-            <div *ngIf="repetead == true" class="alert alert-danger" role="alert">
-                La tarea <strong>{{temp}}</strong> del mes {{task.month}} y día {{task.day}} ya existe.
+            <div *ngIf="error_msj" class="alert alert-danger" role="alert">
+                {{error_msj}}
             </div>
             <!-- Success Alert -->
-            <div *ngIf="repetead == false" class="alert alert-success" role="alert">
+            <div *ngIf="success_msj === 'Saved'" class="alert alert-success" role="alert">
                 Tarea guardada correctamente.
             </div>
             <div class="card">
@@ -21,7 +21,7 @@
                             <input type="text" name="title" id="title" #title="ngModel" [(ngModel)]="task.title"
                                 autocomplete="off" class="form-control" [ngClass]="{
                                 'is-invalid': title.touched && !title.valid,
-                                'is-valid': title.touched && title.valid}" required>
+                                'is-valid': title.touched && title.valid}" required pattern="[A-Za-z]+">
                             <div *ngIf="title.touched && !title.valid">
                                 <span [ngStyle]="{'color': 'red'}">El título es incorrecto</span>
                             </div>
@@ -32,7 +32,8 @@
                             <textarea name="description" id="description" rows="3" #description="ngModel"
                                 [(ngModel)]="task.description" autocomplete="off" class="form-control" 
                                 [ngClass]="{'is-invalid': description.touched && !description.valid,
-                                            'is-valid': description.touched && description.valid}" required></textarea>
+                                            'is-valid': description.touched && description.valid}" required pattern="[A-Za-z]+"
+                            ></textarea>
                             <div *ngIf="description.touched && !description.valid">
                                 <span [ngStyle]="{'color': 'red'}">La descripción no es válida.</span>
                             </div>
