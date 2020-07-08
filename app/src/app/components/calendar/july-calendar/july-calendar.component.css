@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+main {
+    grid-area: content;
+    padding: 90px;
+  }
+  
+  /* MAIN */
+  .calendar{}
+  
+  .calendar__week,
+  .calendar__header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);  
+  }
+  .calendar__week {
+    grid-auto-rows: 130px;
+    text-align: right;
+  }
+  
+  .calendar__header {
+    grid-auto-rows: 50px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .calendar__day {
+    padding: 5px;
+  }
+  
+  /* COSMETIC STYLING */
+  
+  :root {
+    --red: #ED5454;
+  }
+  
+  body {
+    font-family: Montserrat;
+    font-weight: 100;
+    color: #A8B2B9;
+  }
+  
+  main {
+    background-color: #FCFBFC;
+  }
+
+  
+  .calendar {
+    background-color: white;
+    border: 1px solid #e1e1e1;
+  }
+  
+  .calendar__header > div {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: bold;
+    letter-spacing: .3em;
+  }
+  
+  .calendar__day {
+    border-right: 1px solid #e1e1e1;
+    border-top: 1px solid #e1e1e1;
+  }
+  
+  .calendar__day:last-child {
+    border-right: 0;
+  }
+  
+  .false {
+      color: rgba(108, 117, 125, 0.53);
+  }
+
+svg {
+    width: 41px;
+    padding: 5px;
+}
+
+.save svg {
+    color: blue;
+    cursor: pointer;
+}
+
+.save svg:hover {
+    color: rgba(0, 98, 204, 0.61);;
+    cursor: pointer;
+}
+
+.edit svg {
+    color: rgb(54, 171, 54);
+    cursor: pointer;
+}
+
+.edit svg:hover {
+    color: rgba(49, 212, 62, 0.71);
+    cursor: pointer;
+}
+
+ul  li{
+    font-size: 12px;
+    width: -1px;
+    font-weight: bold;
+    padding: 3px;
+    line-height: 1.3em;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+span {
+    color: crimson;
+}
