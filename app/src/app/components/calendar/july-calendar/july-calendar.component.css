@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=News+Cycle&display=swap');
 
 main {
     grid-area: content;
@@ -6,8 +8,6 @@ main {
   }
   
   /* MAIN */
-  .calendar{}
-  
   .calendar__week,
   .calendar__header {
     display: grid;
@@ -86,12 +86,12 @@ svg {
 }
 
 .edit svg {
-    color: rgb(54, 171, 54);
+    color: #f78259;
     cursor: pointer;
 }
 
 .edit svg:hover {
-    color: rgba(49, 212, 62, 0.71);
+    color: rgba(249, 122, 32, 0.59);
     cursor: pointer;
 }
 
@@ -107,4 +107,10 @@ ul  li{
 
 span {
     color: crimson;
+}
+
+strong {
+  padding-right: 53px;
+  font-family: 'News Cycle', sans-serif;
+  font-size: 14px;
 }
