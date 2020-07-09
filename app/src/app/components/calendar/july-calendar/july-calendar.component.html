@@ -1,4 +1,5 @@
 <main>
+    <h1 class="month">Julio</h1>
     <div class="calendar">
         <div class="calendar__header">
             <div>Domingo</div>
@@ -28,12 +29,11 @@
                         <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
                     </svg>
                 </a>
-                <ul>
-                    <li>Proyectos:<span> 23</span></li>
-                    <li>Notas:  0</li>
-                    <li>Tareas:  <span> 2</span></li>
-                    <li>Cumpleaños:  0</li>
-                </ul>
+                <div *ngIf="show_day_1">
+                    <ul *ngFor="let day of day_1">
+                        <li>{{day.category}}: <span>{{day.quantity}}</span></li>
+                    </ul>
+                </div>
             </div>
             <!-- ////////  2  ///////// -->
             <div class="calendar__day day"> <strong>2</strong>
@@ -50,12 +50,11 @@
                         <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
                     </svg>
                 </a>
-                <ul>
-                    <li>Proyectos:<span> 23</span></li>
-                    <li>Notas:  0</li>
-                    <li>Tareas:  <span> 2</span></li>
-                    <li>Cumpleaños:  0</li>
-                </ul>
+                <div *ngIf="show_day_2">
+                    <ul *ngFor="let day of day_2">
+                        <li>{{day.category}}: <span>{{day.quantity}}</span></li>
+                    </ul>
+                </div>
             </div>
             <!-- ////////  3  ///////// -->
             <div class="calendar__day day"> <strong>3</strong>
@@ -72,12 +71,12 @@
                         <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
                     </svg>
                 </a>
-                <ul>
-                    <li>Proyectos:<span> 23</span></li>
-                    <li>Notas:  0</li>
-                    <li>Tareas:  <span> 2</span></li>
-                    <li>Cumpleaños:  0</li>
-                </ul>
+                <div *ngIf="show_day_3">
+                    <ul *ngFor="let day of day_3">
+                        <li>{{day.category}}: <span>{{day.quantity}}</span></li>
+                    </ul>
+                </div>
+                
             </div>
             <!-- ////////  4  ///////// -->
             <div class="calendar__day day"> <strong>4</strong>
@@ -94,12 +93,11 @@
                         <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
                     </svg>
                 </a>
-                <ul>
-                    <li>Proyectos:<span> 23</span></li>
-                    <li>Notas:  0</li>
-                    <li>Tareas:  <span> 2</span></li>
-                    <li>Cumpleaños:  0</li>
-                </ul>
+                <div *ngIf="show_day_4">
+                    <ul *ngFor="let day of day_4">
+                        <li>{{day.category}}: <span>{{day.quantity}}</span></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="calendar__week">
@@ -118,12 +116,11 @@
                         <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
                     </svg>
                 </a>
-                <ul>
-                    <li>Proyectos:<span> 23</span></li>
-                    <li>Notas:  0</li>
-                    <li>Tareas:  <span> 2</span></li>
-                    <li>Cumpleaños:  0</li>
-                </ul>
+                <div *ngIf="show_day_5">
+                    <ul *ngFor="let day of day_5">
+                        <li>{{day.category}}: <span>{{day.quantity}}</span></li>
+                    </ul>
+                </div>
             </div>
             <!-- ////////  6  ///////// -->
             <div class="calendar__day day"> <strong>6</strong>
@@ -140,12 +137,11 @@
                         <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
                     </svg>
                 </a>
-                <ul>
-                    <li>Proyectos:<span> 23</span></li>
-                    <li>Notas:  0</li>
-                    <li>Tareas:  <span> 2</span></li>
-                    <li>Cumpleaños:  0</li>
-                </ul>
+                <div *ngIf="show_day_6">
+                    <ul *ngFor="let day of day_6">
+                        <li>{{day.category}}: <span>{{day.quantity}}</span></li>
+                    </ul>
+                </div>
             </div>
             <!-- ////////  7  ///////// -->
             <div class="calendar__day day"> <strong>7</strong>
@@ -162,12 +158,11 @@
                         <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
                     </svg>
                 </a>
-                <ul>
-                    <li>Proyectos:<span> 23</span></li>
-                    <li>Notas:  0</li>
-                    <li>Tareas:  <span> 2</span></li>
-                    <li>Cumpleaños:  0</li>
-                </ul>
+                <div *ngIf="show_day_7">
+                    <ul *ngFor="let day of day_7">
+                        <li>{{day.category}}: <span>{{day.quantity}}</span></li>
+                    </ul>
+                </div>
             </div>
             <!-- ////////  8  ///////// -->
             <div class="calendar__day day"> <strong>8</strong>
@@ -184,12 +179,11 @@
                         <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
                     </svg>
                 </a>
-                <ul>
-                    <li>Proyectos:<span> 23</span></li>
-                    <li>Notas:  0</li>
-                    <li>Tareas:  <span> 2</span></li>
-                    <li>Cumpleaños:  0</li>
-                </ul>
+                <div *ngIf="show_day_8">
+                    <ul *ngFor="let day of day_8">
+                        <li>{{day.category}}: <span>{{day.quantity}}</span></li>
+                    </ul>
+                </div>
             </div>
             <!-- ////////  9  ///////// -->
             <div class="calendar__day day"> <strong>9</strong>
@@ -206,12 +200,11 @@
                         <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
                     </svg>
                 </a>
-                <ul>
-                    <li>Proyectos:<span> 23</span></li>
-                    <li>Notas:  0</li>
-                    <li>Tareas:  <span> 2</span></li>
-                    <li>Cumpleaños:  0</li>
-                </ul>
+                <div *ngIf="show_day_9">
+                    <ul *ngFor="let day of day_9">
+                        <li>{{day.category}}: <span>{{day.quantity}}</span></li>
+                    </ul>
+                </div>
             </div>
             <!-- ////////  10  ///////// -->
             <div class="calendar__day day"> <strong>10</strong>
@@ -228,12 +221,11 @@
                         <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
                     </svg>
                 </a>
-                <ul>
-                    <li>Proyectos:<span> 23</span></li>
-                    <li>Notas:  0</li>
-                    <li>Tareas:  <span> 2</span></li>
-                    <li>Cumpleaños:  0</li>
-                </ul>
+                <div *ngIf="show_day_10">
+                    <ul *ngFor="let day of day_10">
+                        <li>{{day.category}}: <span>{{day.quantity}}</span></li>
+                    </ul>
+                </div>
             </div>
             <!-- ////////  11  ///////// -->
             <div class="calendar__day day"> <strong>11</strong>
@@ -682,7 +674,7 @@
                 </ul>
             </div>
             <!-- ////////  31  ///////// -->
-            <div class="calendar__day day"> <strong>30</strong>
+            <div class="calendar__day day"> <strong>31</strong>
                 <a class="save">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4 1h5v1H4a1 1 0 0 0-1 1H2a2 2 0 0 1 2-2zm10 7v5a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V8h1zM2 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H2zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H2zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H2z"/>

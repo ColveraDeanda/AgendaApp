@@ -41,7 +41,7 @@ export class TaskService {
     return this._http.put(this.url + "task/" + id, task, {headers: headers});
    }
 
-   getByIdAndAmonth(day: number, month: string): Observable<any> {
+   getByDayAndAmonth(day: number, month: string): Observable<any> {
     let headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this._http.get(this.url + "task/" + day + "/" + month, {headers: headers});
    }

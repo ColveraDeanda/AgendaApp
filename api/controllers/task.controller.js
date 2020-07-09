@@ -199,7 +199,7 @@ var TaskController = {
             if (err) return res.status(500).send({ message: 'A ocurrido un error.' });
             if (!data) return res.status(404).send({ message: 'Error al obtener los datos.' });
             if (data.length == 0) {
-                res.status(200).send({ message: "No se han guardado registros." });
+                res.status(200).send({ tasks: [] });
             } else {
                 res.status(200).send({
                     tasks: data
