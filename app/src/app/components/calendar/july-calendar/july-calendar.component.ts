@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../../../services/task/task.service';
+import { Task } from '../../../models/task.model';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-july-calendar',
@@ -18,7 +20,7 @@ export class JulyCalendarComponent implements OnInit {
   day_8: Array<Object> = [];
   day_9: Array<Object> = [];
   day_10: Array<Object> = [];
-  day_11: Array<Object> = []; 
+  day_11: Array<Object> = [];
   day_12: Array<Object> = [];
   day_13: Array<Object> = [];
   day_14: Array<Object> = [];
@@ -72,6 +74,11 @@ export class JulyCalendarComponent implements OnInit {
   show_day_30: boolean = false;
   show_day_31: boolean = false;
 
+  tasks_detail: Array<Task> = [];
+  day_detail: number;
+  month_detail: string;
+  message_data: string;
+
   constructor(private taskService: TaskService) {
   }
 
@@ -110,6 +117,7 @@ export class JulyCalendarComponent implements OnInit {
   }
 
 
+  // Main screen
   async getByDayAndMonth(day: number, month: string) {
     this.taskService.getByDayAndAmonth(day, month).subscribe(res => {
       let empty: number = 0;
@@ -406,10 +414,89 @@ export class JulyCalendarComponent implements OnInit {
             empty++
           }
         });
-        empty === 4 ? this.show_day_31 = false : this.show_day_31= true; return this.day_31 = categories;
+        empty === 4 ? this.show_day_31 = false : this.show_day_31 = true; return this.day_31 = categories;
       }
     }, err => {
       console.log(err);
+    })
+  }
+
+  // Charging data in modal
+  getByDayAndMonthDetail(day: number, month: string) {
+    this.taskService.getByDayAndAmonth(day, month).subscribe(res => {
+      console.log(res);
+      if (res.tasks.length === 0) {
+        this.message_data = 'No se han guardado registros';
+      } else {
+        this.message_data = null;
+        this.tasks_detail = res.tasks;
+        this.day_detail = this.tasks_detail[0].day;
+        this.month_detail = this.tasks_detail[0].month;
+        console.log(this.tasks_detail);
+        console.log(this.day_detail, this.month_detail);
+      }
+    }, err => {
+      console.log(err);
+    })
+  }
+
+  deleteTask(id: string, day: number) {
+    Swal.fire({
+      title: '¿Realmente desea eliminar el registro?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Eliminar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.value) {
+        this.taskService.deleteTask(id).subscribe(res => {
+          console.log(res);
+          this.taskService.getByDayAndAmonth(this.day_detail, this.month_detail)
+            .subscribe(res => {
+              this.tasks_detail = res.tasks;
+            }, err => {
+              console.log(err);
+            });
+            // All days.. Again
+            if(day === 1) this.getByDayAndMonth(1, 'Julio');
+            if(day === 2) this.getByDayAndMonth(2, 'Julio');
+            if(day === 3) this.getByDayAndMonth(3, 'Julio');
+            if(day === 4) this.getByDayAndMonth(4, 'Julio');
+            if(day === 5) this.getByDayAndMonth(5, 'Julio');
+            if(day === 6) this.getByDayAndMonth(6, 'Julio');
+            if(day === 7) this.getByDayAndMonth(7, 'Julio');
+            if(day === 8) this.getByDayAndMonth(8, 'Julio');
+            if(day === 9) this.getByDayAndMonth(9, 'Julio');
+            if(day === 10) this.getByDayAndMonth(10, 'Julio');
+            if(day === 11) this.getByDayAndMonth(11, 'Julio');
+            if(day === 12) this.getByDayAndMonth(12, 'Julio');
+            if(day === 13) this.getByDayAndMonth(13, 'Julio');
+            if(day === 14) this.getByDayAndMonth(14, 'Julio');
+            if(day === 15) this.getByDayAndMonth(15, 'Julio');
+            if(day === 16) this.getByDayAndMonth(16, 'Julio');
+            if(day === 17) this.getByDayAndMonth(17, 'Julio');
+            if(day === 18) this.getByDayAndMonth(18, 'Julio');
+            if(day === 19) this.getByDayAndMonth(19, 'Julio');
+            if(day === 20) this.getByDayAndMonth(20, 'Julio');
+            if(day === 21) this.getByDayAndMonth(21, 'Julio');
+            if(day === 22) this.getByDayAndMonth(22, 'Julio');
+            if(day === 23) this.getByDayAndMonth(23, 'Julio');
+            if(day === 24) this.getByDayAndMonth(24, 'Julio');
+            if(day === 25) this.getByDayAndMonth(25, 'Julio');
+            if(day === 26) this.getByDayAndMonth(26, 'Julio');
+            if(day === 27) this.getByDayAndMonth(27, 'Julio');
+            if(day === 28) this.getByDayAndMonth(28, 'Julio');
+            if(day === 29) this.getByDayAndMonth(29, 'Julio');
+            if(day === 30) this.getByDayAndMonth(30, 'Julio');
+            if(day === 31) this.getByDayAndMonth(31, 'Julio');
+        }, err => {
+          console.log(err);
+        });
+      } else {
+        console.log('Petición cancelada.');
+      }
     })
   }
 

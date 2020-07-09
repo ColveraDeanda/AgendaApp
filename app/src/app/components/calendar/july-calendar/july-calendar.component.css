@@ -126,3 +126,34 @@ strong {
   font-size: 56px;
   letter-spacing: 4px;
 }
+
+.category span {
+  font-weight: bold;
+  color: black;
+}
+
+.card {
+  margin-top: 18px;
+}
+
+.edit-modal {
+  color: white;
+  position: absolute;
+  left: 90%;
+}
+
+.edit-modal:hover {
+  cursor: pointer;
+  color: #143e6be0
+}
+
+.delete-model {
+  color: white;
+  position: absolute;
+  left: 81%;
+}
+
+.delete-model:hover {
+  cursor: pointer;
+  color: rgba(189, 33, 48, 0.8705882352941177);
+}
