@@ -21,7 +21,7 @@
                             <input type="text" name="title" id="title" #title="ngModel" [(ngModel)]="task.title"
                                 autocomplete="off" class="form-control" [ngClass]="{
                                 'is-invalid': title.touched && !title.valid,
-                                'is-valid': title.touched && title.valid}" required pattern="[A-Za-z _]+">
+                                'is-valid': title.touched && title.valid}" required pattern="^([a-zA-Z _]|[à-ú]|[À-Ú])+$">
                             <div *ngIf="title.touched && !title.valid">
                                 <span [ngStyle]="{'color': 'red'}">El título es incorrecto</span>
                             </div>
@@ -32,7 +32,7 @@
                             <textarea name="description" id="description" rows="3" #description="ngModel"
                                 [(ngModel)]="task.description" autocomplete="off" class="form-control" 
                                 [ngClass]="{'is-invalid': description.touched && !description.valid,
-                                            'is-valid': description.touched && description.valid}" required pattern="[A-Za-z _]+"
+                                            'is-valid': description.touched && description.valid}" required pattern="^([a-zA-Z _]|[à-ú]|[À-Ú])+$"
                             ></textarea>
                             <div *ngIf="description.touched && !description.valid">
                                 <span [ngStyle]="{'color': 'red'}">La descripción no es válida.</span>
