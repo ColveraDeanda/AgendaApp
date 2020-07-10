@@ -10,7 +10,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { CreateTaskComponent } from './components/create-task/create-task.component';
 import { UpdateTaskComponent } from './components/update-task/update-task.component';
 import { JulyCalendarComponent } from './components/calendar/july-calendar/july-calendar.component';
-import { AugustComponent } from './components/calendar/august/august.component';
+import { AugustComponent } from './components/calendar/august-calendar/august.component';
 
 @NgModule({
   declarations: [
