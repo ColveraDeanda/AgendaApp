@@ -9,8 +9,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
 import { CreateTaskComponent } from './components/create-task/create-task.component';
 import { UpdateTaskComponent } from './components/update-task/update-task.component';
-import { JanuaryCalendarComponent } from './components/calendar/january-calendar/january-calendar.component';
 import { JulyCalendarComponent } from './components/calendar/july-calendar/july-calendar.component';
+import { AugustComponent } from './components/calendar/august/august.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +19,8 @@ import { JulyCalendarComponent } from './components/calendar/july-calendar/july-
     ErrorComponent,
     CreateTaskComponent,
     UpdateTaskComponent,
-    JanuaryCalendarComponent,
     JulyCalendarComponent,
+    AugustComponent
   ],
   imports: [
     BrowserModule,

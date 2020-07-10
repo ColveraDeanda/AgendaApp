@@ -134,19 +134,19 @@ var TaskController = {
         let valid = [];
 
         if (body.title == null || !isNaN(body.title)) {
-            valid.push('El título es incorrecto');
+            valid.push(' el título es incorrecto');
         }
         if (body.description == null || !isNaN(body.description)) {
-            valid.push('La descripción es incorrecta');
+            valid.push(' la descripción es incorrecta');
         }
         if (body.category == null || !isNaN(body.category)) {
-            valid.push('La categoría es incorrecta');
+            valid.push(' la categoría es incorrecta');
         }
         if (body.day == null || isNaN(body.day) || body.day.length == 0) {
-            valid.push('El día es incorrecto');
+            valid.push(' el día es incorrecto');
         }
         if (body.month == null || !isNaN(body.month)) {
-            valid.push('El mes es incorrecto');
+            valid.push(' el mes es incorrecto');
         }
 
         // Setting Data
@@ -174,13 +174,13 @@ var TaskController = {
                         });
                     });
                 } else {
-                    return res.status(200).send({
-                        message: 'La tarea ya existe'
+                    return res.status(500).send({
+                        repeated: 'La tarea ya existe'
                     });
                 }
             });
         } else {
-            return res.status(200).send({
+            return res.status(500).send({
                 errors: valid
             });
         }

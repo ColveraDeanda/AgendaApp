@@ -3,13 +3,14 @@ import { TaskService } from '../../../services/task/task.service';
 import { Task } from '../../../models/task.model';
 import Swal from 'sweetalert2'
 
+
 @Component({
-  selector: 'app-july-calendar',
-  templateUrl: './july-calendar.component.html',
-  styleUrls: ['./july-calendar.component.css'],
+  selector: 'app-august',
+  templateUrl: './august.component.html',
+  styleUrls: ['./august.component.css'],
   providers: [TaskService]
 })
-export class JulyCalendarComponent implements OnInit {
+export class AugustComponent implements OnInit {
   day_1: Array<Object> = [];
   day_2: Array<Object> = [];
   day_3: Array<Object> = [];
@@ -78,49 +79,47 @@ export class JulyCalendarComponent implements OnInit {
   day_detail: number;
   month_detail: string;
   message_data: string;
-  birthdays: number;
-  notes: number;
-  projects: number;
-  tasks: number;
+  birthdays: number = 0;
+  notes: number = 0;
+  projects: number = 0;
+  tasks: number = 0;
 
-  constructor(private taskService: TaskService) {
-  }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
     this.getCategories();
-    this.getByDayAndMonth(1, 'Julio');
-    this.getByDayAndMonth(2, 'Julio');
-    this.getByDayAndMonth(3, 'Julio');
-    this.getByDayAndMonth(4, 'Julio');
-    this.getByDayAndMonth(5, 'Julio');
-    this.getByDayAndMonth(6, 'Julio');
-    this.getByDayAndMonth(7, 'Julio');
-    this.getByDayAndMonth(8, 'Julio');
-    this.getByDayAndMonth(9, 'Julio');
-    this.getByDayAndMonth(10, 'Julio');
-    this.getByDayAndMonth(11, 'Julio');
-    this.getByDayAndMonth(12, 'Julio');
-    this.getByDayAndMonth(13, 'Julio');
-    this.getByDayAndMonth(14, 'Julio');
-    this.getByDayAndMonth(15, 'Julio');
-    this.getByDayAndMonth(16, 'Julio');
-    this.getByDayAndMonth(17, 'Julio');
-    this.getByDayAndMonth(18, 'Julio');
-    this.getByDayAndMonth(19, 'Julio');
-    this.getByDayAndMonth(20, 'Julio');
-    this.getByDayAndMonth(21, 'Julio');
-    this.getByDayAndMonth(22, 'Julio');
-    this.getByDayAndMonth(23, 'Julio');
-    this.getByDayAndMonth(24, 'Julio');
-    this.getByDayAndMonth(25, 'Julio');
-    this.getByDayAndMonth(26, 'Julio');
-    this.getByDayAndMonth(27, 'Julio');
-    this.getByDayAndMonth(28, 'Julio');
-    this.getByDayAndMonth(29, 'Julio');
-    this.getByDayAndMonth(30, 'Julio');
-    this.getByDayAndMonth(31, 'Julio');
+    this.getByDayAndMonth(1, 'Agosto');
+    this.getByDayAndMonth(2, 'Agosto');
+    this.getByDayAndMonth(3, 'Agosto');
+    this.getByDayAndMonth(4, 'Agosto');
+    this.getByDayAndMonth(5, 'Agosto');
+    this.getByDayAndMonth(6, 'Agosto');
+    this.getByDayAndMonth(7, 'Agosto');
+    this.getByDayAndMonth(8, 'Agosto');
+    this.getByDayAndMonth(9, 'Agosto');
+    this.getByDayAndMonth(10, 'Agosto');
+    this.getByDayAndMonth(11, 'Agosto');
+    this.getByDayAndMonth(12, 'Agosto');
+    this.getByDayAndMonth(13, 'Agosto');
+    this.getByDayAndMonth(14, 'Agosto');
+    this.getByDayAndMonth(15, 'Agosto');
+    this.getByDayAndMonth(16, 'Agosto');
+    this.getByDayAndMonth(17, 'Agosto');
+    this.getByDayAndMonth(18, 'Agosto');
+    this.getByDayAndMonth(19, 'Agosto');
+    this.getByDayAndMonth(20, 'Agosto');
+    this.getByDayAndMonth(21, 'Agosto');
+    this.getByDayAndMonth(22, 'Agosto');
+    this.getByDayAndMonth(23, 'Agosto');
+    this.getByDayAndMonth(24, 'Agosto');
+    this.getByDayAndMonth(25, 'Agosto');
+    this.getByDayAndMonth(26, 'Agosto');
+    this.getByDayAndMonth(27, 'Agosto');
+    this.getByDayAndMonth(28, 'Agosto');
+    this.getByDayAndMonth(29, 'Agosto');
+    this.getByDayAndMonth(30, 'Agosto');
+    this.getByDayAndMonth(31, 'Agosto');
   }
-
 
   // Main screen
   async getByDayAndMonth(day: number, month: string) {
@@ -465,38 +464,38 @@ export class JulyCalendarComponent implements OnInit {
             }, err => {
               console.log(err);
             });
-            // All days.. Again
-            if(day === 1) this.getByDayAndMonth(1, 'Julio');
-            if(day === 2) this.getByDayAndMonth(2, 'Julio');
-            if(day === 3) this.getByDayAndMonth(3, 'Julio');
-            if(day === 4) this.getByDayAndMonth(4, 'Julio');
-            if(day === 5) this.getByDayAndMonth(5, 'Julio');
-            if(day === 6) this.getByDayAndMonth(6, 'Julio');
-            if(day === 7) this.getByDayAndMonth(7, 'Julio');
-            if(day === 8) this.getByDayAndMonth(8, 'Julio');
-            if(day === 9) this.getByDayAndMonth(9, 'Julio');
-            if(day === 10) this.getByDayAndMonth(10, 'Julio');
-            if(day === 11) this.getByDayAndMonth(11, 'Julio');
-            if(day === 12) this.getByDayAndMonth(12, 'Julio');
-            if(day === 13) this.getByDayAndMonth(13, 'Julio');
-            if(day === 14) this.getByDayAndMonth(14, 'Julio');
-            if(day === 15) this.getByDayAndMonth(15, 'Julio');
-            if(day === 16) this.getByDayAndMonth(16, 'Julio');
-            if(day === 17) this.getByDayAndMonth(17, 'Julio');
-            if(day === 18) this.getByDayAndMonth(18, 'Julio');
-            if(day === 19) this.getByDayAndMonth(19, 'Julio');
-            if(day === 20) this.getByDayAndMonth(20, 'Julio');
-            if(day === 21) this.getByDayAndMonth(21, 'Julio');
-            if(day === 22) this.getByDayAndMonth(22, 'Julio');
-            if(day === 23) this.getByDayAndMonth(23, 'Julio');
-            if(day === 24) this.getByDayAndMonth(24, 'Julio');
-            if(day === 25) this.getByDayAndMonth(25, 'Julio');
-            if(day === 26) this.getByDayAndMonth(26, 'Julio');
-            if(day === 27) this.getByDayAndMonth(27, 'Julio');
-            if(day === 28) this.getByDayAndMonth(28, 'Julio');
-            if(day === 29) this.getByDayAndMonth(29, 'Julio');
-            if(day === 30) this.getByDayAndMonth(30, 'Julio');
-            if(day === 31) this.getByDayAndMonth(31, 'Julio');
+          // All days.. Again
+          if (day === 1) this.getByDayAndMonth(1, 'Agosto');
+          if (day === 2) this.getByDayAndMonth(2, 'Agosto');
+          if (day === 3) this.getByDayAndMonth(3, 'Agosto');
+          if (day === 4) this.getByDayAndMonth(4, 'Agosto');
+          if (day === 5) this.getByDayAndMonth(5, 'Agosto');
+          if (day === 6) this.getByDayAndMonth(6, 'Agosto');
+          if (day === 7) this.getByDayAndMonth(7, 'Agosto');
+          if (day === 8) this.getByDayAndMonth(8, 'Agosto');
+          if (day === 9) this.getByDayAndMonth(9, 'Agosto');
+          if (day === 10) this.getByDayAndMonth(10, 'Agosto');
+          if (day === 11) this.getByDayAndMonth(11, 'Agosto');
+          if (day === 12) this.getByDayAndMonth(12, 'Agosto');
+          if (day === 13) this.getByDayAndMonth(13, 'Agosto');
+          if (day === 14) this.getByDayAndMonth(14, 'Agosto');
+          if (day === 15) this.getByDayAndMonth(15, 'Agosto');
+          if (day === 16) this.getByDayAndMonth(16, 'Agosto');
+          if (day === 17) this.getByDayAndMonth(17, 'Agosto');
+          if (day === 18) this.getByDayAndMonth(18, 'Agosto');
+          if (day === 19) this.getByDayAndMonth(19, 'Agosto');
+          if (day === 20) this.getByDayAndMonth(20, 'Agosto');
+          if (day === 21) this.getByDayAndMonth(21, 'Agosto');
+          if (day === 22) this.getByDayAndMonth(22, 'Agosto');
+          if (day === 23) this.getByDayAndMonth(23, 'Agosto');
+          if (day === 24) this.getByDayAndMonth(24, 'Agosto');
+          if (day === 25) this.getByDayAndMonth(25, 'Agosto');
+          if (day === 26) this.getByDayAndMonth(26, 'Agosto');
+          if (day === 27) this.getByDayAndMonth(27, 'Agosto');
+          if (day === 28) this.getByDayAndMonth(28, 'Agosto');
+          if (day === 29) this.getByDayAndMonth(29, 'Agosto');
+          if (day === 30) this.getByDayAndMonth(30, 'Agosto');
+          if (day === 31) this.getByDayAndMonth(31, 'Agosto');
         }, err => {
           console.log(err);
         });
@@ -507,7 +506,7 @@ export class JulyCalendarComponent implements OnInit {
   }
 
   getCategories() {
-    this.taskService.getCategoriesByMonth('Julio').subscribe(res => {
+    this.taskService.getCategoriesByMonth('Agosto').subscribe(res => {
       if (!res.message) {
         console.log(res);
         this.birthdays = res.birthday;
