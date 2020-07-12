@@ -11,3 +11,6 @@
 ![Detalle](https://user-images.githubusercontent.com/29857557/87252826-c8d8fe00-c43b-11ea-900e-e78c550d341a.PNG)
 
 ### (Cada tarea guardada se podrá editar o eliminar)
+
+### Backend: Comando para correr el servidor de NodeJs => npm start
+### Frontend: Instalar dependencias con comando npm install. comando para correr el servidor de Angular => ng serve --open
