@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TaskService } from '../../services/task/task.service';
 import { Task } from '../../models/task.model';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-create-task',
@@ -41,7 +40,6 @@ export class CreateTaskComponent implements OnInit {
   saveTask(form) {
     this.errors = [];
     this.taskService.saveTask(this.task).subscribe((res) => {
-      console.log(res);
       this.success_msj = 'Saved';
       setTimeout(() => {
         this.success_msj = '';
@@ -56,7 +54,6 @@ export class CreateTaskComponent implements OnInit {
         setTimeout(() => {
           this.error_msj = '';
         }, 7000);
-        console.log(this.error_msj);
       } else {
         this.errors.push(err.error.repeated);
         this.error_msj = this.errors.join()
@@ -64,7 +61,6 @@ export class CreateTaskComponent implements OnInit {
         setTimeout(() => {
           this.error_msj = '';
         }, 7000);
-        console.log(this.error_msj);
       }
     });
     form.reset();

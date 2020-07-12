@@ -428,7 +428,6 @@ export class AugustComponent implements OnInit {
   // Charging data in modal
   getByDayAndMonthDetail(day: number, month: string) {
     this.taskService.getByDayAndAmonth(day, month).subscribe(res => {
-      console.log(res);
       if (res.tasks.length === 0) {
         this.message_data = 'No se han guardado registros';
       } else {
@@ -436,8 +435,6 @@ export class AugustComponent implements OnInit {
         this.tasks_detail = res.tasks;
         this.day_detail = this.tasks_detail[0].day;
         this.month_detail = this.tasks_detail[0].month;
-        console.log(this.tasks_detail);
-        console.log(this.day_detail, this.month_detail);
       }
     }, err => {
       console.log(err);
@@ -457,7 +454,6 @@ export class AugustComponent implements OnInit {
       if (result.value) {
         this.taskService.deleteTask(id).subscribe(res => {
           this.getCategories();
-          console.log(res);
           this.taskService.getByDayAndAmonth(this.day_detail, this.month_detail)
             .subscribe(res => {
               this.tasks_detail = res.tasks;
@@ -500,7 +496,7 @@ export class AugustComponent implements OnInit {
           console.log(err);
         });
       } else {
-        console.log('Petición cancelada.');
+        // console.log('Petición cancelada.');
       }
     })
   }
@@ -508,12 +504,10 @@ export class AugustComponent implements OnInit {
   getCategories() {
     this.taskService.getCategoriesByMonth('Agosto').subscribe(res => {
       if (!res.message) {
-        console.log(res);
         this.birthdays = res.birthday;
         this.notes = res.notes;
         this.projects = res.projects;
         this.tasks = res.tasks;
-        console.log(this.birthdays, this.notes, this.projects, this.tasks);
       } else {
         this.birthdays = 0;
         this.notes = 0;

@@ -43,7 +43,6 @@ export class UpdateTaskComponent implements OnInit {
   getTask() {
     this.taskService.getTask(this.id).subscribe(res => {
       this.task = res.task;
-      console.log(this.task);
     }, err => {
       console.log(err);
     });
@@ -52,7 +51,6 @@ export class UpdateTaskComponent implements OnInit {
   updateTask(form: NgForm) {
     this.errors = [];
     this.taskService.updateTask(this.id, this.task).subscribe((res) => {
-      console.log(res);
       this.success_msj = 'Saved';
       setTimeout(() => {
         this.success_msj = '';
@@ -67,7 +65,6 @@ export class UpdateTaskComponent implements OnInit {
         setTimeout(() => {
           this.error_msj = '';
         }, 7000);
-        console.log(this.error_msj);
       } else {
         this.errors.push(err.error.repeated);
         this.error_msj = this.errors.join()
@@ -75,7 +72,6 @@ export class UpdateTaskComponent implements OnInit {
         setTimeout(() => {
           this.error_msj = '';
         }, 3000);
-        console.log(this.error_msj);
       }
     });
   }

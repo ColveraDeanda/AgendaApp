@@ -83,11 +83,47 @@ export class JulyCalendarComponent implements OnInit {
   projects: number;
   tasks: number;
 
+  date = new Date();
+  actual_day: number;
+  actual_day_1: boolean = false;
+  actual_day_2: boolean = false;
+  actual_day_3: boolean = false;
+  actual_day_4: boolean = false;
+  actual_day_5: boolean = false;
+  actual_day_6: boolean = false;
+  actual_day_7: boolean = false;
+  actual_day_8: boolean = false;
+  actual_day_9: boolean = false;
+  actual_day_10: boolean = false;
+  actual_day_11: boolean = false;
+  actual_day_12: boolean = false;
+  actual_day_13: boolean = false;
+  actual_day_14: boolean = false;
+  actual_day_15: boolean = false;
+  actual_day_16: boolean = false;
+  actual_day_17: boolean = false;
+  actual_day_18: boolean = false;
+  actual_day_19: boolean = false;
+  actual_day_20: boolean = false;
+  actual_day_21: boolean = false;
+  actual_day_22: boolean = false;
+  actual_day_23: boolean = false;
+  actual_day_24: boolean = false;
+  actual_day_25: boolean = false;
+  actual_day_26: boolean = false;
+  actual_day_27: boolean = false;
+  actual_day_28: boolean = false;
+  actual_day_29: boolean = false;
+  actual_day_30: boolean = false;
+  actual_day_31: boolean = false;
+
   constructor(private taskService: TaskService) {
+    this.actual_day = this.date.getDate();
   }
 
   ngOnInit(): void {
     this.getCategories();
+    this.actualDay();
     this.getByDayAndMonth(1, 'Julio');
     this.getByDayAndMonth(2, 'Julio');
     this.getByDayAndMonth(3, 'Julio');
@@ -429,7 +465,6 @@ export class JulyCalendarComponent implements OnInit {
   // Charging data in modal
   getByDayAndMonthDetail(day: number, month: string) {
     this.taskService.getByDayAndAmonth(day, month).subscribe(res => {
-      console.log(res);
       if (res.tasks.length === 0) {
         this.message_data = 'No se han guardado registros';
       } else {
@@ -437,8 +472,6 @@ export class JulyCalendarComponent implements OnInit {
         this.tasks_detail = res.tasks;
         this.day_detail = this.tasks_detail[0].day;
         this.month_detail = this.tasks_detail[0].month;
-        console.log(this.tasks_detail);
-        console.log(this.day_detail, this.month_detail);
       }
     }, err => {
       console.log(err);
@@ -458,7 +491,6 @@ export class JulyCalendarComponent implements OnInit {
       if (result.value) {
         this.taskService.deleteTask(id).subscribe(res => {
           this.getCategories();
-          console.log(res);
           this.taskService.getByDayAndAmonth(this.day_detail, this.month_detail)
             .subscribe(res => {
               this.tasks_detail = res.tasks;
@@ -501,7 +533,7 @@ export class JulyCalendarComponent implements OnInit {
           console.log(err);
         });
       } else {
-        console.log('Petición cancelada.');
+        // console.log('Petición cancelada.');
       }
     })
   }
@@ -509,12 +541,10 @@ export class JulyCalendarComponent implements OnInit {
   getCategories() {
     this.taskService.getCategoriesByMonth('Julio').subscribe(res => {
       if (!res.message) {
-        console.log(res);
         this.birthdays = res.birthday;
         this.notes = res.notes;
         this.projects = res.projects;
         this.tasks = res.tasks;
-        console.log(this.birthdays, this.notes, this.projects, this.tasks);
       } else {
         this.birthdays = 0;
         this.notes = 0;
@@ -526,4 +556,41 @@ export class JulyCalendarComponent implements OnInit {
     });
   }
 
+  // Showing actual day
+  actualDay() {
+    switch(this.actual_day) {
+      case 1: return this.actual_day_1 = true;
+      case 2: return this.actual_day_2 = true;
+      case 3: return this.actual_day_3 = true;
+      case 4: return this.actual_day_4 = true;
+      case 5: return this.actual_day_5 = true;
+      case 6: return this.actual_day_6 = true;
+      case 7: return this.actual_day_7 = true;
+      case 8: return this.actual_day_8 = true;
+      case 9: return this.actual_day_9 = true;
+      case 10: return this.actual_day_10 = true;
+      case 11: return this.actual_day_11 = true;
+      case 12: return this.actual_day_12 = true;
+      case 13: return this.actual_day_13 = true;
+      case 14: return this.actual_day_14 = true;
+      case 15: return this.actual_day_15 = true;
+      case 16: return this.actual_day_16 = true;
+      case 17: return this.actual_day_17 = true;
+      case 18: return this.actual_day_18 = true;
+      case 19: return this.actual_day_19 = true;
+      case 20: return this.actual_day_20 = true;
+      case 21: return this.actual_day_21 = true;
+      case 22: return this.actual_day_22 = true;
+      case 23: return this.actual_day_23 = true;
+      case 24: return this.actual_day_24 = true;
+      case 25: return this.actual_day_25 = true;
+      case 26: return this.actual_day_26 = true;
+      case 27: return this.actual_day_27 = true;
+      case 28: return this.actual_day_28 = true;
+      case 29: return this.actual_day_29 = true;
+      case 30: return this.actual_day_30 = true;
+      case 31: return this.actual_day_31 = true;
+    }
+
+  }
 }

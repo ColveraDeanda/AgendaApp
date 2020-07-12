@@ -166,5 +166,14 @@ h3 {
   padding-left: 22%;
 }
 
+.actualDay {
+  background: #ffc107;
+  margin-top: 5px;
+  padding-left: 9px;
+  border-radius: 20px;
+  padding-right: 9px;
+  margin: 24px;
+}
+
 
 
