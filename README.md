@@ -12,5 +12,5 @@
 
 ### (Cada tarea guardada se podrá editar o eliminar)
 
-### Backend: Comando para correr el servidor de NodeJs => npm start
-### Frontend: Instalar dependencias con comando npm install. comando para correr el servidor de Angular => ng serve --open
+- Backend: Comando para correr el servidor de NodeJs => npm start
+- Frontend: Instalar dependencias con comando npm install. comando para correr el servidor de Angular => ng serve --open
