@@ -9,3 +9,5 @@
 
 ## Es posible visualizar el detalle de tareas de cada día:
 ![Detalle](https://user-images.githubusercontent.com/29857557/87252826-c8d8fe00-c43b-11ea-900e-e78c550d341a.PNG)
+
+### (Cada tarea guardada se podrá editar o eliminar)
