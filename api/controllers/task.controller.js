@@ -1,5 +1,6 @@
 var Task = require('../models/task.model');
 var ObjectId = require('mongodb').ObjectID;
+var jwt = require('jsonwebtoken');
 
 var TaskController = {
 
@@ -236,6 +237,17 @@ var TaskController = {
                 projects: projects
             });
         });
+    },
+
+    verifyToken: function(req, res, next) {
+        if(!req.headers.authorization) return res.status(500).send({message: 'Solcitud denegada'});
+        let token = req.headers.authorization.split(' ')[1];
+        if(token === null) return res.status(500).send({message: 'Solcitud denegada'});
+
+        // Devuelve el id de ese token
+        const data = jwt.verify(token, 'secretKey');
+        req.userId = data._id;
+        next();
     }
 
 }

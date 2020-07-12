@@ -6,6 +6,7 @@ var app = express()
 
 // Routes to import
 var task = require('./routes/task.route');
+var user = require('./routes/user.route');
 
 
 app.use((req, res, next) => {
@@ -23,6 +24,7 @@ app.use(bodyParser.json());
 
 // Initialize Routes
 app.use('/api', task);
+app.use('/api', user);
 
 
 module.exports = app
