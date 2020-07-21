@@ -35,7 +35,7 @@
                                             'is-valid': description.touched && description.valid}" required pattern="^([0-9a-zA-Z _]|[à-ú]|[À-Ú])+$"
                             ></textarea>
                             <div *ngIf="description.touched && !description.valid">
-                                <span [ngStyle]="{'color': 'red'}">Description is incorrect.</span>
+                                <span [ngStyle]="{'color': 'red'}">Description is incorrect</span>
                             </div>
                         </div>
                         <!-- Category -->

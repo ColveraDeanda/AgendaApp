@@ -7,7 +7,7 @@
             </div>
             <!-- Success Alert -->
             <div *ngIf="success_msj === 'Saved'" class="alert alert-success" role="alert">
-                Tarea actualizada correctamente.
+                Task correctly updated.
             </div>
             <div class="card">
                 <div class="card-header text-center">
@@ -17,30 +17,30 @@
                     <form #taskForm="ngForm" (ngSubmit)="updateTask(taskForm)">
                         <!-- Title -->
                         <div class="form-group has-danger has-success">
-                            <label for="title"> <strong>Título</strong></label>
+                            <label for="title"> <strong>Title</strong></label>
                             <input type="text" name="title" id="title" #title="ngModel" [(ngModel)]="task.title"
                                 autocomplete="off" class="form-control" [ngClass]="{
                                 'is-invalid': title.touched && !title.valid,
                                 'is-valid': title.touched && title.valid}" required pattern="^([a-zA-Z _]|[à-ú]|[À-Ú])+$">
                             <div *ngIf="title.touched && !title.valid">
-                                <span [ngStyle]="{'color': 'red'}">El título es incorrecto</span>
+                                <span [ngStyle]="{'color': 'red'}">Title is incorrect</span>
                             </div>
                         </div>
                         <!-- Description -->
                         <div class="form-group has-danger has-success">
-                            <label for="description"> <strong>Descripción</strong></label>
+                            <label for="description"> <strong>Description</strong></label>
                             <textarea name="description" id="description" rows="3" #description="ngModel"
                                 [(ngModel)]="task.description" autocomplete="off" class="form-control" 
                                 [ngClass]="{'is-invalid': description.touched && !description.valid,
                                             'is-valid': description.touched && description.valid}" required pattern="^([0-9a-zA-Z _]|[à-ú]|[À-Ú])+$"
                             ></textarea>
                             <div *ngIf="description.touched && !description.valid">
-                                <span [ngStyle]="{'color': 'red'}">La descripción no es válida.</span>
+                                <span [ngStyle]="{'color': 'red'}">Description is incorrect</span>
                             </div>
                         </div>
                         <!-- Category -->
                         <div class="form-group has-danger has-success">
-                            <label for="category"> <strong>Categoría</strong></label>
+                            <label for="category"> <strong>Category</strong></label>
                             <select class="form-control" [ngClass]="{
                                     'is-invalid': category.touched && !category.valid,
                                     'is-valid': category.touched && category.valid}" id="category" name="category"
@@ -50,7 +50,7 @@
                                 </option>
                             </select>
                             <div *ngIf="category.touched && !category.valid">
-                                <span [ngStyle]="{'color': 'red'}">La categoría no es válida.</span>
+                                <span [ngStyle]="{'color': 'red'}">Category is incorrect</span>
                             </div>
                         </div>
                         <input type="submit" value="Actualizar" class="btn btn-success" [disabled]="!taskForm.form.valid">
