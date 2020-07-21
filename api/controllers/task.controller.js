@@ -226,10 +226,10 @@ var TaskController = {
             if (data.length == 0) {
                 return res.status(200).send({ message: "No existen registros en este mes." });
             }
-            notes = data.filter((x) => x.category === "Nota").length;
-            birthday = data.filter((x) => x.category === "Cumpleaños").length;
-            tasks = data.filter((x) => x.category === "Tarea").length;
-            projects = data.filter((x) => x.category === "Proyecto").length;
+            notes = data.filter((x) => x.category === "Note").length;
+            birthday = data.filter((x) => x.category === "Birthday").length;
+            tasks = data.filter((x) => x.category === "Task").length;
+            projects = data.filter((x) => x.category === "Project").length;
             return res.status(200).send({
                 notes: notes,
                 birthday: birthday,

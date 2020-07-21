@@ -30,10 +30,10 @@ export class CreateTaskComponent implements OnInit {
 
   ngOnInit(): void {
     this.categories = [
-      {id: "NOT", name: "Nota"},
-      {id: "CMP", name: "Cumpleaños"},
-      {id: "TAR", name: "Tarea"},
-      {id: "PRO", name: "Proyecto"}
+      {id: "NOT", name: "Note"},
+      {id: "CMP", name: "Birthday"},
+      {id: "TAR", name: "Task"},
+      {id: "PRO", name: "Project"}
     ]
   }
 
