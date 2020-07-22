@@ -11,6 +11,7 @@ import { CreateTaskComponent } from './components/create-task/create-task.compon
 import { UpdateTaskComponent } from './components/update-task/update-task.component';
 import { JulyCalendarComponent } from './components/calendar/july-calendar/july-calendar.component';
 import { AugustComponent } from './components/calendar/august-calendar/august.component';
+import { SeptemberCalendarComponent } from './components/calendar/september-calendar/september-calendar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AugustComponent } from './components/calendar/august-calendar/august.co
     CreateTaskComponent,
     UpdateTaskComponent,
     JulyCalendarComponent,
-    AugustComponent
+    AugustComponent,
+    SeptemberCalendarComponent
   ],
   imports: [
     BrowserModule,
