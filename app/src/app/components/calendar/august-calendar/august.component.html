@@ -1,19 +1,19 @@
 <main>
-    <h1 class="month">Agosto</h1>
-    <h3>Notas: <span [ngStyle]="{'color': 'rgba(18, 66, 113, 0.87)', 'padding-right': '40px'}">{{notes}}</span>
-        Tareas: <span [ngStyle]="{'color': 'rgba(18, 66, 113, 0.87)', 'padding-right': '40px'}">{{tasks}}</span>
-        Proyectos: <span [ngStyle]="{'color': 'rgba(18, 66, 113, 0.87)', 'padding-right': '40px'}">{{projects}}</span>
-        Cumpleaños: <span [ngStyle]="{'color': 'rgba(18, 66, 113, 0.87)', 'padding-right': '40px'}">{{birthdays}}</span>
+    <h1 class="month">August</h1>
+    <h3>Notes: <span [ngStyle]="{'color': 'rgba(18, 66, 113, 0.87)', 'padding-right': '40px'}">{{notes}}</span>
+        Tasks: <span [ngStyle]="{'color': 'rgba(18, 66, 113, 0.87)', 'padding-right': '40px'}">{{tasks}}</span>
+        Projects: <span [ngStyle]="{'color': 'rgba(18, 66, 113, 0.87)', 'padding-right': '40px'}">{{projects}}</span>
+        Birthdays: <span [ngStyle]="{'color': 'rgba(18, 66, 113, 0.87)', 'padding-right': '40px'}">{{birthdays}}</span>
     </h3>
     <div class="calendar">
         <div class="calendar__header">
-            <div>Domingo</div>
-            <div>Lunes</div>
-            <div>Martes</div>
-            <div>Miércoles</div>
-            <div>Jueves</div>
-            <div>Viernes</div>
-            <div>Sábado</div>
+            <div>Sunday</div>
+            <div>Monday</div>
+            <div>Tuesday</div>
+            <div>Wednesday</div>
+            <div>Thursday</div>
+            <div>Friday</div>
+            <div>Saturday</div>
         </div>
         <div class="calendar__week">
             <div class="calendar__day day false">26</div>
@@ -24,7 +24,7 @@
             <div class="calendar__day day false">31</div>
             <!-- ////////  1  ///////// -->
             <div class="calendar__day day"> <strong>1</strong>
-                <a class="save" routerLink="/create/Agosto/1">
+                <a class="save" routerLink="/create/August/1">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -35,7 +35,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(1, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(1, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -56,7 +56,7 @@
         <div class="calendar__week">
             <!--2 -->
             <div class="calendar__day day"> <strong>2</strong>
-                <a class="save" routerLink="/create/Agosto/2">
+                <a class="save" routerLink="/create/August/2">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -67,7 +67,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(2, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(2, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -85,7 +85,7 @@
             </div>
             <!-- 3 -->
             <div class="calendar__day day"> <strong>3</strong>
-                <a class="save" routerLink="/create/Agosto/3">
+                <a class="save" routerLink="/create/August/3">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -96,7 +96,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(3, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(3, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -114,7 +114,7 @@
             </div>
             <!-- 4 -->
             <div class="calendar__day day"> <strong>4</strong>
-                <a class="save" routerLink="/create/Agosto/4">
+                <a class="save" routerLink="/create/August/4">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -125,7 +125,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(4, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(4, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -143,7 +143,7 @@
             </div>
             <!-- 5 -->
             <div class="calendar__day day"> <strong>5</strong>
-                <a class="save" routerLink="/create/Agosto/5">
+                <a class="save" routerLink="/create/August/5">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -154,7 +154,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(5, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(5, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -172,7 +172,7 @@
             </div>
             <!-- 6 -->
             <div class="calendar__day day"> <strong>6</strong>
-                <a class="save" routerLink="/create/Agosto/6">
+                <a class="save" routerLink="/create/August/6">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -183,7 +183,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(6, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(6, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -201,7 +201,7 @@
             </div>
             <!-- 7 -->
             <div class="calendar__day day"> <strong>7</strong>
-                <a class="save" routerLink="/create/Agosto/7">
+                <a class="save" routerLink="/create/August/7">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -212,7 +212,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(7, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(7, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -230,7 +230,7 @@
             </div>
             <!-- 8 -->
             <div class="calendar__day day"> <strong>8</strong>
-                <a class="save" routerLink="/create/Agosto/8">
+                <a class="save" routerLink="/create/August/8">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -241,7 +241,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(8, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(8, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -262,7 +262,7 @@
         <div class="calendar__week">
             <!-- 9 -->
             <div class="calendar__day day"> <strong>9</strong>
-                <a class="save" routerLink="/create/Agosto/9">
+                <a class="save" routerLink="/create/August/9">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -273,7 +273,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(9, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(9, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -291,7 +291,7 @@
             </div>
             <!-- 10 -->
             <div class="calendar__day day"> <strong>10</strong>
-                <a class="save" routerLink="/create/Agosto/10">
+                <a class="save" routerLink="/create/August/10">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -302,7 +302,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(10, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(10, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -320,7 +320,7 @@
             </div>
             <!-- 11 -->
             <div class="calendar__day day"> <strong>11</strong>
-                <a class="save" routerLink="/create/Agosto/11">
+                <a class="save" routerLink="/create/August/11">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -331,7 +331,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(11, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(11, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -349,7 +349,7 @@
             </div>
             <!-- 12 -->
             <div class="calendar__day day"> <strong>12</strong>
-                <a class="save" routerLink="/create/Agosto/12">
+                <a class="save" routerLink="/create/August/12">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -360,7 +360,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(12, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(12, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -378,7 +378,7 @@
             </div>
             <!-- 13 -->
             <div class="calendar__day day"> <strong>13</strong>
-                <a class="save" routerLink="/create/Agosto/13">
+                <a class="save" routerLink="/create/August/13">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -389,7 +389,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(13, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(13, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -407,7 +407,7 @@
             </div>
             <!-- 14 -->
             <div class="calendar__day day"> <strong>14</strong>
-                <a class="save" routerLink="/create/Agosto/14">
+                <a class="save" routerLink="/create/August/14">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -418,7 +418,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(14, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(14, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -436,7 +436,7 @@
             </div>
             <!-- 15 -->
             <div class="calendar__day day"> <strong>15</strong>
-                <a class="save" routerLink="/create/Agosto/15">
+                <a class="save" routerLink="/create/August/15">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -447,7 +447,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(15, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(15, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -468,7 +468,7 @@
         <div class="calendar__week">
             <!-- 16 -->
             <div class="calendar__day day"> <strong>16</strong>
-                <a class="save" routerLink="/create/Agosto/16">
+                <a class="save" routerLink="/create/August/16">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -479,7 +479,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(16, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(16, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -497,7 +497,7 @@
             </div>
             <!-- 17 -->
             <div class="calendar__day day"> <strong>17</strong>
-                <a class="save" routerLink="/create/Agosto/17">
+                <a class="save" routerLink="/create/August/17">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -508,7 +508,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(17, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(17, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -526,7 +526,7 @@
             </div>
             <!-- 18 -->
             <div class="calendar__day day"> <strong>18</strong>
-                <a class="save" routerLink="/create/Agosto/18">
+                <a class="save" routerLink="/create/August/18">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -537,7 +537,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(18, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(18, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -555,7 +555,7 @@
             </div>
             <!-- 19 -->
             <div class="calendar__day day"> <strong>19</strong>
-                <a class="save" routerLink="/create/Agosto/19">
+                <a class="save" routerLink="/create/August/19">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -566,7 +566,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(19, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(19, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -584,7 +584,7 @@
             </div>
             <!-- 20 -->
             <div class="calendar__day day"> <strong>20</strong>
-                <a class="save" routerLink="/create/Agosto/20">
+                <a class="save" routerLink="/create/August/20">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -595,7 +595,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(20, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(20, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -613,7 +613,7 @@
             </div>
             <!-- 21 -->
             <div class="calendar__day day"> <strong>21</strong>
-                <a class="save" routerLink="/create/Agosto/21">
+                <a class="save" routerLink="/create/August/21">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -624,7 +624,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(21, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(21, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -642,7 +642,7 @@
             </div>
             <!-- 22 -->
             <div class="calendar__day day"> <strong>22</strong>
-                <a class="save" routerLink="/create/Agosto/22">
+                <a class="save" routerLink="/create/August/22">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -653,7 +653,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(22, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(22, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -674,7 +674,7 @@
         <div class="calendar__week">
             <!-- 23 -->
             <div class="calendar__day day"> <strong>23</strong>
-                <a class="save" routerLink="/create/Agosto/23">
+                <a class="save" routerLink="/create/August/23">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -685,7 +685,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(23, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(23, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -703,7 +703,7 @@
             </div>
             <!-- 24 -->
             <div class="calendar__day day"> <strong>24</strong>
-                <a class="save" routerLink="/create/Agosto/24">
+                <a class="save" routerLink="/create/August/24">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -714,7 +714,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(24, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(24, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -732,7 +732,7 @@
             </div>
             <!-- 25 -->
             <div class="calendar__day day"> <strong>25</strong>
-                <a class="save" routerLink="/create/Agosto/25">
+                <a class="save" routerLink="/create/August/25">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -743,7 +743,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(25, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(25, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -761,7 +761,7 @@
             </div>
             <!-- 26 -->
             <div class="calendar__day day"> <strong>26</strong>
-                <a class="save" routerLink="/create/Agosto/26">
+                <a class="save" routerLink="/create/August/26">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -772,7 +772,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(26, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(26, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -790,7 +790,7 @@
             </div>
             <!-- 27 -->
             <div class="calendar__day day"> <strong>27</strong>
-                <a class="save" routerLink="/create/Agosto/27">
+                <a class="save" routerLink="/create/August/27">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -801,7 +801,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(27, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(27, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -819,7 +819,7 @@
             </div>
             <!-- 28 -->
             <div class="calendar__day day"> <strong>28</strong>
-                <a class="save" routerLink="/create/Agosto/28">
+                <a class="save" routerLink="/create/August/28">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -830,7 +830,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(28, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(28, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -848,7 +848,7 @@
             </div>
             <!-- 29 -->
             <div class="calendar__day day"> <strong>29</strong>
-                <a class="save" routerLink="/create/Agosto/29">
+                <a class="save" routerLink="/create/August/29">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -859,7 +859,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(29, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(29, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -880,7 +880,7 @@
         <div class="calendar__week">
             <!-- 30 -->
             <div class="calendar__day day"> <strong>30</strong>
-                <a class="save" routerLink="/create/Agosto/30">
+                <a class="save" routerLink="/create/August/30">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -891,7 +891,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(30, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(30, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -909,7 +909,7 @@
             </div>
             <!-- 31 -->
             <div class="calendar__day day"> <strong>31</strong>
-                <a class="save" routerLink="/create/Agosto/31">
+                <a class="save" routerLink="/create/August/31">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-journal-plus" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -920,7 +920,7 @@
                             d="M13 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z" />
                     </svg>
                 </a>
-                <a class="edit" (click)="getByDayAndMonthDetail(31, 'Agosto')" data-toggle="modal"
+                <a class="edit" (click)="getByDayAndMonthDetail(31, 'August')" data-toggle="modal"
                     data-target="#exampleModal">
                     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
@@ -957,7 +957,7 @@
         <div class="modal-content">
             <div class="modal-header" [ngStyle]="{'background-color': '#336d88', 'color': 'white' }">
                 <h5 class="modal-title" id="exampleModalLabel" *ngIf="message_data">{{message_data}}</h5>
-                <h5 class="modal-title" id="exampleModalLabel" *ngIf="!message_data">{{day_detail}} de {{month_detail}}
+                <h5 class="modal-title" id="exampleModalLabel" *ngIf="!message_data">{{month_detail}} {{day_detail}}
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span [ngStyle]="{'color': 'white' }" aria-hidden="true">&times;</span>
@@ -988,10 +988,10 @@
                         </div>
                         <div class="card-body">
                             <div class="category">
-                                <span>Categoría: </span> {{task.category}}
+                                <span>Category: </span> {{task.category}}
                             </div>
                             <div class="category">
-                                <span>Descripción: </span> {{task.description}}
+                                <span>Description: </span> {{task.description}}
                             </div>
                         </div>
                     </div>
