@@ -20,19 +20,19 @@ var TaskController = {
         task.month = req.body.month;
 
         if (task.title == null || !isNaN(task.title)) {
-            valid.push(' el título es incorrecto');
+            valid.push(' the title is incorrect');
         }
         if (task.description == null || !isNaN(task.description)) {
-            valid.push(' la descripción es incorrecta');
+            valid.push(' the description is incorrect');
         }
         if (task.category == null || !isNaN(task.category)) {
-            valid.push(' la categoría es incorrecta');
+            valid.push(' the category is incorrect');
         }
         if (task.day == null || isNaN(task.day)) {
-            valid.push(' el día es incorrecto');
+            valid.push(' the day in incorrect');
         }
         if (task.month == null || !isNaN(task.month)) {
-            valid.push(' el mes es incorrecto');
+            valid.push(' the month is incorrect');
         }
 
         // Setting Data
@@ -53,15 +53,15 @@ var TaskController = {
                 });
                 if (error === false) {
                     task.save((err, data) => {
-                        if (err) return res.status(500).send({ message: 'Error al guardar' });
-                        if (!data) return res.status(404).send({ message: 'Error al guardar' });
+                        if (err) return res.status(500).send({ message: 'Saving error' });
+                        if (!data) return res.status(404).send({ message: 'Saving error' });
                         return res.status(200).send({
                             task: data
                         });
                     });
                 } else {
                     return res.status(500).send({
-                        repeated: 'La tarea ya existe'
+                        repeated: 'The task already exists'
                     });
                 }
             });
@@ -78,11 +78,11 @@ var TaskController = {
      */
     getTasks: function (err, res) {
         Task.find((err, data) => {
-            if (err) return res.status(500).send({ message: 'A ocurrido un error.' });
-            if (!data) return res.status(404).send({ message: 'No hay registros a mostrar' });
+            if (err) return res.status(500).send({ message: 'An error has occurred' });
+            if (!data) return res.status(404).send({ message: 'No records to show' });
             if (data.length == 0) {
                 return res.status(200).send({
-                    message: 'No se han registrado tareas'
+                    message: 'No tasks have been recorded'
                 });
             }
             return res.status(200).send({
@@ -99,8 +99,8 @@ var TaskController = {
     getTask: function (req, res) {
         let id = req.params.id;
         Task.findById(id, (err, data) => {
-            if (err) return res.status(500).send({ message: 'Error al devolver el registro' });
-            if (!data) return res.status(404).send({ message: 'El registro no existe' });
+            if (err) return res.status(500).send({ message: 'Error when returning the record' });
+            if (!data) return res.status(404).send({ message: 'Registration does not exist' });
             return res.status(200).send({
                 task: data
             });
@@ -115,10 +115,10 @@ var TaskController = {
     deleteTask: function (req, res) {
         let id = req.params.id;
         Task.findByIdAndDelete(id, (err, data) => {
-            if (err) return res.status(500).send({ message: 'Error al eliminar' });
-            if (!data) return res.status(404).send({ message: 'No existe un dato a eliminar' });
+            if (err) return res.status(500).send({ message: 'Error when removing' });
+            if (!data) return res.status(404).send({ message: 'There is no data to be deleted' });
             return res.status(200).send({
-                message: 'Tarea elimada'
+                message: 'Task eliminated'
             });
         });
     },
@@ -135,19 +135,19 @@ var TaskController = {
         let valid = [];
 
         if (body.title == null || !isNaN(body.title)) {
-            valid.push(' el título es incorrecto');
+            valid.push(' the title is incorrect');
         }
         if (body.description == null || !isNaN(body.description)) {
-            valid.push(' la descripción es incorrecta');
+            valid.push(' the description is incorrect');
         }
         if (body.category == null || !isNaN(body.category)) {
-            valid.push(' la categoría es incorrecta');
+            valid.push(' the category is incorrect');
         }
         if (body.day == null || isNaN(body.day) || body.day.length == 0) {
-            valid.push(' el día es incorrecto');
+            valid.push(' the day is incorrect');
         }
         if (body.month == null || !isNaN(body.month)) {
-            valid.push(' el mes es incorrecto');
+            valid.push(' the month is incorrect');
         }
 
         // Setting Data
@@ -168,15 +168,15 @@ var TaskController = {
                 });
                 if (error === false) {
                     Task.findByIdAndUpdate(id, body, { new: true }, (err, data) => {
-                        if (err) return res.status(500).send({ message: 'Error al actualizar' });
-                        if (!data) return res.status(404).send({ message: 'No existe un dato a actualizar' });
+                        if (err) return res.status(500).send({ message: 'Error while updating' });
+                        if (!data) return res.status(404).send({ message: 'There is no data to update' });
                         return res.status(200).send({
                             task: data
                         });
                     });
                 } else {
                     return res.status(500).send({
-                        repeated: 'La tarea ya existe'
+                        repeated: 'The task already exists'
                     });
                 }
             });
@@ -197,8 +197,8 @@ var TaskController = {
         let day = req.params.day;
         let month = req.params.month;
         Task.find({ day: day, month: month }).exec((err, data) => {
-            if (err) return res.status(500).send({ message: 'A ocurrido un error.' });
-            if (!data) return res.status(404).send({ message: 'Error al obtener los datos.' });
+            if (err) return res.status(500).send({ message: 'An error has occurred' });
+            if (!data) return res.status(404).send({ message: 'Error in obtaining the data' });
             if (data.length == 0) {
                 res.status(200).send({ tasks: [] });
             } else {
@@ -221,10 +221,10 @@ var TaskController = {
         let tasks = 0;
         let projects = 0;
         Task.find({ month: month }).exec((err, data) => {
-            if (err) return res.status(500).send({ message: 'A ocurrido un error.' });
-            if (!data) return res.status(404).send({ message: 'Error al obtener los datos.' });
+            if (err) return res.status(500).send({ message: 'An error has occurred' });
+            if (!data) return res.status(404).send({ message: 'Error in obtaining the data' });
             if (data.length == 0) {
-                return res.status(200).send({ message: "No existen registros en este mes." });
+                return res.status(200).send({ message: "There are no records for this month" });
             }
             notes = data.filter((x) => x.category === "Note").length;
             birthday = data.filter((x) => x.category === "Birthday").length;
@@ -240,9 +240,9 @@ var TaskController = {
     },
 
     verifyToken: function(req, res, next) {
-        if(!req.headers.authorization) return res.status(500).send({message: 'Solcitud denegada'});
+        if(!req.headers.authorization) return res.status(500).send({message: 'Application denied'});
         let token = req.headers.authorization.split(' ')[1];
-        if(token === null) return res.status(500).send({message: 'Solcitud denegada'});
+        if(token === null) return res.status(500).send({message: 'Application denied'});
 
         // Devuelve el id de ese token
         const data = jwt.verify(token, 'secretKey');
