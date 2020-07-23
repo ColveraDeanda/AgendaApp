@@ -13,6 +13,7 @@ import { JulyCalendarComponent } from './components/calendar/july-calendar/july-
 import { AugustComponent } from './components/calendar/august-calendar/august.component';
 import { SeptemberCalendarComponent } from './components/calendar/september-calendar/september-calendar.component';
 import { OctoberCalendarComponent } from './components/calendar/october-calendar/october-calendar.component';
+import { NovemberCalendarComponent } from './components/calendar/november-calendar/november-calendar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { OctoberCalendarComponent } from './components/calendar/october-calendar
     JulyCalendarComponent,
     AugustComponent,
     SeptemberCalendarComponent,
-    OctoberCalendarComponent
+    OctoberCalendarComponent,
+    NovemberCalendarComponent
   ],
   imports: [
     BrowserModule,
