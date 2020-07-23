@@ -8,6 +8,7 @@ import { AugustComponent } from './components/calendar/august-calendar/august.co
 import { SeptemberCalendarComponent } from './components/calendar/september-calendar/september-calendar.component';
 import { OctoberCalendarComponent } from './components/calendar/october-calendar/october-calendar.component';
 import { NovemberCalendarComponent } from './components/calendar/november-calendar/november-calendar.component';
+import { DecemberCalendarComponent } from './components/calendar/december-calendar/december-calendar.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'september', component: SeptemberCalendarComponent},
   {path: 'october', component: OctoberCalendarComponent},
   {path: 'november', component: NovemberCalendarComponent},
+  {path: 'december', component: DecemberCalendarComponent},
   {path: '**', component: JulyCalendarComponent}
   
 ];

@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=News+Cycle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Swash:wght@700&display=swap');
+
+main {
+    grid-area: content;
+    padding: 50px;
+  }
+  
+  /* MAIN */
+  .calendar__week,
+  .calendar__header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);  
+  }
+  .calendar__week {
+    grid-auto-rows: 130px;
+    text-align: right;
+  }
+  
+  .calendar__header {
+    grid-auto-rows: 50px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .calendar__day {
+    padding: 5px;
+  }
+  
+  /* COSMETIC STYLING */
+  
+  :root {
+    --red: #ED5454;
+  }
+  
+  body {
+    font-family: Montserrat;
+    font-weight: 100;
+    color: #A8B2B9;
+  }
+  
+  main {
+    background-color: #84a9ac;
+  }
+
+  
+  .calendar {
+    background-color: white;
+    
+  }
+  
+  .calendar__header > div {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: bold;
+    letter-spacing: .3em;
+    background-color: #3b6978;
+    color: whitesmoke;
+    height: 52px;
+    line-height: 48px;
+  }
+  
+  .calendar__day {
+    border-right: 1px solid #e1e1e1;
+    border-top: 1px solid #e1e1e1;
+  }
+  
+  .calendar__day:last-child {
+    border-right: 0;
+  }
+  
+  .false {
+      color: rgba(108, 117, 125, 0.53);
+  }
+
+svg {
+    width: 41px;
+    padding: 5px;
+}
+
+.save svg {
+    color: blue;
+    cursor: pointer;
+}
+
+.save svg:hover {
+    color: rgba(0, 98, 204, 0.61);;
+    cursor: pointer;
+}
+
+.edit svg {
+    color: #f78259;
+    cursor: pointer;
+}
+
+.edit svg:hover {
+    color: rgba(249, 122, 32, 0.59);
+    cursor: pointer;
+}
+
+ul  li{
+    font-size: 12px;
+    width: -1px;
+    font-weight: bold;
+    padding: 3px;
+    line-height: 2px;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+span {
+    color: crimson;
+}
+
+strong {
+  padding-right: 64px;
+  font-family: 'News Cycle', sans-serif;
+  font-size: 14px;
+}
+
+.month {
+  font-family: 'Cherry Swash', cursive;
+  color: white;
+  font-size: 56px;
+  letter-spacing: 4px;
+}
+
+.category span {
+  font-weight: bold;
+  color: black;
+}
+
+.card {
+  margin-top: 18px;
+}
+
+.edit-modal {
+  color: white;
+  position: absolute;
+  left: 90%;
+}
+
+.edit-modal:hover {
+  cursor: pointer;
+  color: #143e6be0
+}
+
+.delete-model {
+  color: white;
+  position: absolute;
+  left: 81%;
+}
+
+.delete-model:hover {
+  cursor: pointer;
+  color: rgba(189, 33, 48, 0.8705882352941177);
+}
+
+h3 {
+  position: inherit;
+  bottom: 74%;
+  left: 29%;
+  font-family: cursive;
+  padding-left: 22%;
+}
+
+.actualDay {
+  background: #ffc107;
+  margin-top: 5px;
+  padding-left: 9px;
+  border-radius: 20px;
+  padding-right: 9px;
+  margin: 24px;
+}
