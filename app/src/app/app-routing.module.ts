@@ -6,6 +6,7 @@ import { UpdateTaskComponent } from './components/update-task/update-task.compon
 import { JulyCalendarComponent } from './components/calendar/july-calendar/july-calendar.component';
 import { AugustComponent } from './components/calendar/august-calendar/august.component';
 import { SeptemberCalendarComponent } from './components/calendar/september-calendar/september-calendar.component';
+import { OctoberCalendarComponent } from './components/calendar/october-calendar/october-calendar.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'july', component: JulyCalendarComponent},
   {path: 'august', component: AugustComponent},
   {path: 'september', component: SeptemberCalendarComponent},
+  {path: 'october', component: OctoberCalendarComponent},
   {path: '**', component: JulyCalendarComponent}
   
 ];
